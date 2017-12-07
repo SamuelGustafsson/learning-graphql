@@ -1,10 +1,6 @@
 import * as graphql from "graphql";
 const { GraphQLObjectType, GraphQLString, GraphQLSchema } = graphql;
-
-const users = [
-  { id: "23", firstname: "Bill", lastname: "Jacksson" },
-  { id: "24", firstname: "Samuel", lastname: "Gustafsson" }
-];
+const axios = require("axios");
 
 const UserType = new GraphQLObjectType({
   name: "User",
@@ -22,7 +18,10 @@ const RootQuery = new GraphQLObjectType({
       type: UserType,
       args: { id: { type: GraphQLString } },
       resolve(_parentValue: any, args: any) {
-        return users.find(user => user.id === args.id);
+        console.log(args.id);
+        return axios
+          .get(`http://localhost:3000/users/${args.id}`)
+          .then(response => response.data);
       }
     }
   }
