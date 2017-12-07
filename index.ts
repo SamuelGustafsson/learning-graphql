@@ -1,6 +1,7 @@
 import * as express from "express";
 // TODO: Why not import?
 const expressGraphQL = require("express-graphql");
+const schema = require("./schema/schema");
 
 const app = express();
 
@@ -8,6 +9,7 @@ const app = express();
 app.use(
   "/graphql",
   expressGraphQL({
+    schema,
     graphiql: true
   })
 );
