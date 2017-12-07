@@ -43,6 +43,8 @@ Go to www.localhost:4000/graphql and add this to display user.
 * [Node](https://nodejs.org/en/) - JavaScript runtime built on Chrome's V8
   JavaScript engine.
 * [Typescript](https://www.typescriptlang.org/) - Programming language.
+* [Json-server](https://github.com/typicode/json-server) - Fake REST API with
+  zero coding.
 
 ## Authors
 

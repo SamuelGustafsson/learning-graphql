@@ -1,0 +1,9 @@
+{
+  "users": [
+    { "id": "1", "firstname": "Samuel", "lastname": "Gustafsson" },
+    { "id": "2", "firstname": "Ylva", "lastname": "Nilsarve" },
+    { "id": "3", "firstname": "Emelie", "lastname": "Jacobsson" },
+    { "id": "4", "firstname": "Niclas", "lastname": "Sjöstedt" },
+    { "id": "5", "firstname": "Dag", "lastname": "Edlund" }
+  ]
+}
