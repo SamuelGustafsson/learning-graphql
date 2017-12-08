@@ -9,11 +9,21 @@ const axios = require("axios");
 
 const CommentType = new GraphQLObjectType({
   name: "Comment",
-  fields: {
+  fields: () => ({
     id: { type: GraphQLString },
     title: { type: GraphQLString },
-    comment: { type: GraphQLString }
-  }
+    comment: { type: GraphQLString },
+    author: {
+      type: UserType,
+      resolve(_parentValue, args) {
+        console.log("ParentValue", _parentValue);
+        console.log("Args", args);
+        return axios
+          .get(`http://localhost:3000/users/${_parentValue.userId}`)
+          .then(response => response.data);
+      }
+    }
+  })
 });
 
 const UserType = new GraphQLObjectType({
