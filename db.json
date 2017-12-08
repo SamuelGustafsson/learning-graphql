@@ -3,49 +3,60 @@
     {
       "id": "1",
       "firstname": "Samuel",
-      "lastname": "Gustafsson",
-      "commentId": "1"
+      "lastname": "Gustafsson"
     },
     {
       "id": "2",
       "firstname": "Ylva",
-      "lastname": "Nilsarve",
-      "commentId": "2"
+      "lastname": "Nilsarve"
     },
     {
       "id": "3",
       "firstname": "Emelie",
-      "lastname": "Jacobsson",
-      "commentId": "3"
+      "lastname": "Jacobsson"
     },
     {
       "id": "4",
       "firstname": "Niclas",
-      "lastname": "Sjöstedt",
-      "commentId": "4"
+      "lastname": "Sjöstedt"
     },
-    { "id": "5", "firstname": "Dag", "lastname": "Edlund", "commentId": "5" }
+    { "id": "5", "firstname": "Dag", "lastname": "Edlund" }
   ],
   "comments": [
     {
       "id": "1",
-      "comment": "Hmmm coolt jag är den första kommentaren."
+      "comment": "Hmmm coolt jag är den första kommentaren.",
+      "userId": "1"
     },
     {
       "id": "2",
-      "comment": "jag är den andra kommentaren."
+      "comment": "jag är den andra kommentaren.",
+      "userId": "1"
     },
     {
       "id": "3",
-      "comment": "JAG ÄR DEN TREDJE KOMMENTAREN."
+      "comment": "JAG ÄR DEN TREDJE KOMMENTAREN.",
+      "userId": "4"
     },
     {
       "id": "4",
-      "comment": "HMMM JAG ÄR EN den sista fjärde kommentaren."
+      "comment": "HMMM JAG ÄR EN den sista fjärde kommentaren.",
+      "userId": "2"
     },
     {
       "id": "5",
-      "comment": "HMMM Jag Dag Edlund vill också säga något! (5 kommentaret)."
+      "comment": "HMMM Jag Dag Edlund vill också säga något! (5 kommentaret).",
+      "userId": "2"
+    },
+    {
+      "id": "6",
+      "comment": "HMMM Jag Dag Edlund vill också säga något! (5 kommentaret).",
+      "userId": "3"
+    },
+    {
+      "id": "7",
+      "comment": "Jag Gillar lax (7 kommentaret).",
+      "userId": "2"
     }
   ]
 }
