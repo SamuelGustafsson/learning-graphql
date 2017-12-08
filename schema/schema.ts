@@ -1,5 +1,10 @@
 import * as graphql from "graphql";
-const { GraphQLObjectType, GraphQLString, GraphQLSchema } = graphql;
+const {
+  GraphQLObjectType,
+  GraphQLString,
+  GraphQLSchema,
+  GraphQLList
+} = graphql;
 const axios = require("axios");
 
 const CommentType = new GraphQLObjectType({
@@ -17,11 +22,11 @@ const UserType = new GraphQLObjectType({
     id: { type: GraphQLString },
     firstname: { type: GraphQLString },
     lastname: { type: GraphQLString },
-    comment: {
-      type: CommentType,
+    comments: {
+      type: new GraphQLList(CommentType),
       resolve(_parentValue, args) {
         return axios
-          .get(`http://localhost:3000/comments/${_parentValue.commentId}`)
+          .get(`http://localhost:3000/users/${_parentValue.id}/comments`)
           .then(response => response.data);
       }
     }
