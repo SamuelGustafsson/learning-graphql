@@ -24,6 +24,7 @@ To run project:
 
 ```
 yarn start
+yarn json:server
 ```
 
 Go to www.localhost:4000/graphql and add this to display user.
@@ -40,6 +41,8 @@ Go to www.localhost:4000/graphql and add this to display user.
 ## Built With
 
 * [GraphQL](http://graphql.org/) - A query language for API's.
+* [Axios](https://github.com/axios/axios) - Promise based HTTP client for the
+  browser and node.js.
 * [Node](https://nodejs.org/en/) - JavaScript runtime built on Chrome's V8
   JavaScript engine.
 * [Typescript](https://www.typescriptlang.org/) - Programming language.
