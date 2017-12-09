@@ -1,13 +1,12 @@
-import * as graphql from "graphql";
-const {
+import {
   GraphQLObjectType,
   GraphQLString,
   GraphQLSchema,
   GraphQLList
-} = graphql;
+} from "graphql";
 
 import { UserType, NewsType, CommentType } from "./schema-types";
-const axios = require("axios");
+import axios from "axios";
 
 const RootQuery = new GraphQLObjectType({
   name: "RootQueryType",

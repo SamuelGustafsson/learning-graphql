@@ -1,12 +1,11 @@
-import * as graphql from "graphql";
-const {
+import {
   GraphQLObjectType,
   GraphQLString,
   GraphQLSchema,
   GraphQLList
-} = graphql;
+} from "graphql";
 
-const axios = require("axios");
+import axios from "axios";
 
 export const CommentType = new GraphQLObjectType({
   name: "Comment",
