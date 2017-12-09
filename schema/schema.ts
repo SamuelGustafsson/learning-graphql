@@ -51,12 +51,6 @@ const mutation = new GraphQLObjectType({
       args: {
         firstname: { type: new GraphQLNonNull(GraphQLString) },
         lastname: { type: new GraphQLNonNull(GraphQLString) }
-        // email: { type: GraphQLString },
-        // password: { type: GraphQLString },
-        // admin: {
-        //   type: GraphQLBoolean,
-        //   defaultValue: false
-        // }
       },
       // firstname and lastname comes from args
       resolve(_parentValue, { firstname, lastname }) {
