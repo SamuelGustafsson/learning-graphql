@@ -2,7 +2,9 @@ import {
   GraphQLObjectType,
   GraphQLString,
   GraphQLSchema,
-  GraphQLList
+  GraphQLList,
+  GraphQLBoolean,
+  GraphQLNonNull
 } from "graphql";
 
 import { UserType, NewsType, CommentType } from "./schema-types";
@@ -41,6 +43,32 @@ const RootQuery = new GraphQLObjectType({
   }
 });
 
+const mutation = new GraphQLObjectType({
+  name: "Mutation",
+  fields: {
+    addUser: {
+      type: UserType,
+      args: {
+        firstname: { type: new GraphQLNonNull(GraphQLString) },
+        lastname: { type: new GraphQLNonNull(GraphQLString) }
+        // email: { type: GraphQLString },
+        // password: { type: GraphQLString },
+        // admin: {
+        //   type: GraphQLBoolean,
+        //   defaultValue: false
+        // }
+      },
+      // firstname and lastname comes from args
+      resolve(_parentValue, { firstname, lastname }) {
+        return axios
+          .post("http://localhost:3000/users", { firstname, lastname })
+          .then(response => response.data);
+      }
+    }
+  }
+});
+
 module.exports = new GraphQLSchema({
-  query: RootQuery
+  query: RootQuery,
+  mutation
 });
