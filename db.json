@@ -22,41 +22,63 @@
     },
     { "id": "5", "firstname": "Dag", "lastname": "Edlund" }
   ],
-  "comments": [
+  "news": [
     {
       "id": "1",
-      "comment": "Hmmm coolt jag är den första kommentaren.",
+      "title": "Den førsta nyheten",
+      "content":
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eget dictum felis. Pellentesque in magna ac libero commodo tincidunt ultricies et velit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Maecenas suscipit vitae tellus eu tincidunt. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus aliquet pharetra urna, quis dictum leo congue non. Maecenas bibendum nisl quis elit rutrum egestas.",
       "userId": "1"
     },
     {
       "id": "2",
+      "title": "Den ANDRA nyheten",
+      "content": "JAG ÄR INNEHÅLL I KOMMENTAR 2",
+      "userId": "2"
+    }
+  ],
+  "comments": [
+    {
+      "id": "1",
+      "comment": "Hmmm coolt jag är den första kommentaren.",
+      "userId": "1",
+      "newsId": "2"
+    },
+    {
+      "id": "2",
       "comment": "jag är den andra kommentaren.",
-      "userId": "1"
+      "userId": "1",
+      "newsId": "2"
     },
     {
       "id": "3",
       "comment": "JAG ÄR DEN TREDJE KOMMENTAREN.",
-      "userId": "4"
+      "userId": "4",
+      "newsId": "2"
     },
     {
       "id": "4",
       "comment": "HMMM JAG ÄR EN den sista fjärde kommentaren.",
-      "userId": "2"
+      "userId": "2",
+      "newsId": "1"
     },
     {
       "id": "5",
-      "comment": "HMMM Jag Dag Edlund vill också säga något! (5 kommentaret).",
-      "userId": "2"
+      "comment": "Femte kommentaren.",
+      "userId": "2",
+      "newsId": "1"
     },
     {
       "id": "6",
-      "comment": "HMMM Jag Dag Edlund vill också säga något! (5 kommentaret).",
-      "userId": "3"
+      "comment": "Sjätte kommentaren",
+      "userId": "3",
+      "newsId": "1"
     },
     {
       "id": "7",
       "comment": "Jag Gillar lax (7 kommentaret).",
-      "userId": "2"
+      "userId": "2",
+      "newsId": "1"
     }
   ]
 }
