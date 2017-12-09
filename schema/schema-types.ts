@@ -2,7 +2,8 @@ import {
   GraphQLObjectType,
   GraphQLString,
   GraphQLSchema,
-  GraphQLList
+  GraphQLList,
+  GraphQLBoolean
 } from "graphql";
 
 import axios from "axios";
@@ -57,6 +58,9 @@ export const UserType = new GraphQLObjectType({
     id: { type: GraphQLString },
     firstname: { type: GraphQLString },
     lastname: { type: GraphQLString },
+    email: { type: GraphQLString },
+    password: { type: GraphQLString },
+    admin: { type: GraphQLBoolean },
     comments: {
       type: new GraphQLList(CommentType),
       resolve(_parentValue, args) {
