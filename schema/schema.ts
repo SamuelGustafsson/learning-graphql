@@ -16,10 +16,35 @@ const CommentType = new GraphQLObjectType({
     author: {
       type: UserType,
       resolve(_parentValue, args) {
-        console.log("ParentValue", _parentValue);
-        console.log("Args", args);
         return axios
           .get(`http://localhost:3000/users/${_parentValue.userId}`)
+          .then(response => response.data);
+      }
+    }
+  })
+});
+
+const NewsType = new GraphQLObjectType({
+  name: "NewsType",
+  fields: () => ({
+    id: { type: GraphQLString },
+    title: { type: GraphQLString },
+    content: { type: GraphQLString },
+    author: {
+      type: UserType,
+      resolve: function(_parentValue, args) {
+        return axios
+          .get("http://localhost:3000/users/" + _parentValue.userId)
+          .then(function(response) {
+            return response.data;
+          });
+      }
+    },
+    comments: {
+      type: new GraphQLList(CommentType),
+      resolve(_parentValue, args) {
+        return axios
+          .get(`http://localhost:3000/news/${_parentValue.id}/comments`)
           .then(response => response.data);
       }
     }
@@ -60,6 +85,15 @@ const RootQuery = new GraphQLObjectType({
       args: { id: { type: GraphQLString } },
       resolve(_parentValue, args) {
         return axios(`http://localhost:3000/comments/${args.id}`).then(
+          response => response.data
+        );
+      }
+    },
+    news: {
+      type: NewsType,
+      args: { id: { type: GraphQLString } },
+      resolve(_parentValue, args) {
+        return axios(`http://localhost:3000/news/${args.id}`).then(
           response => response.data
         );
       }
