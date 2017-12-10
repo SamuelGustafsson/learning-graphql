@@ -18,16 +18,29 @@ A step by step serie to start project
 
 ```
 npm install
+
+OR
+
+yarn install
 ```
 
 To run project:
 
 ```
 yarn start
-yarn json:server
+```
+
+Json server endpoints
+
+```
+  http://localhost:3000/users
+  http://localhost:3000/news
+  http://localhost:3000/comments
 ```
 
 Go to www.localhost:4000/graphql and add this to display user.
+
+Find user by id.
 
 ```
 {
@@ -36,6 +49,42 @@ Go to www.localhost:4000/graphql and add this to display user.
         firstname,
         lastname
     }
+```
+
+Add user.
+
+```
+  mutation {
+    addUser(firstname: "Björn", lastname: "Borg") {
+      id
+      firstname
+      lastname
+    }
+  }
+```
+
+Delete user.
+
+```
+ mutation {
+    deleteUser(id:"wantedIdToDelete") {
+      id
+      firstname
+      lastname
+    }
+  }
+```
+
+Update user.
+
+```
+ mutation {
+    updateUser(id:"wantedIdToUpdate") {
+      id
+      firstname
+      lastname
+    }
+  }
 ```
 
 ## Built With
