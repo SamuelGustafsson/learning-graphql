@@ -17,7 +17,8 @@
     "concurrently": "^3.5.1"
   },
   "scripts": {
-    "start": "concurrently \" tsc -w\" \"nodemon ./build/index.js\"",
+    "start":
+      "concurrently \" tsc -w\" \"yarn json:server\" \"nodemon ./build/index.js\"",
     "json:server": "json-server --watch db.json"
   }
 }
