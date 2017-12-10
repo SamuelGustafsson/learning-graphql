@@ -86,7 +86,7 @@ const mutation = new GraphQLObjectType({
   }
 });
 
-module.exports = new GraphQLSchema({
+export const schema = new GraphQLSchema({
   query: RootQuery,
   mutation
 });

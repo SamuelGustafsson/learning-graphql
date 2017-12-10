@@ -1,7 +1,7 @@
 import * as express from "express";
 // TODO: Why not import?
-const expressGraphQL = require("express-graphql");
-const schema = require("./schema/schema");
+import * as expressGraphQL from "express-graphql";
+import { schema } from "./schema/schema";
 
 const app = express();
 
